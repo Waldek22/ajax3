@@ -27,18 +27,16 @@ function showCountriesList(resp) {
    	
    	countryBoxRow.appendTo(countryBox);
    	
-   	$('<p>', {"class": "box-text-1 col-xs-2"}).text('Capital:').appendTo(countryBoxRow);
-   	$('<p>', {"class": "box-text-2 col-xs-8"}).text(item.capital).appendTo(countryBoxRow);
-   	$('<p>', {"class": "box-text-1 col-xs-2"}).text('Region:').appendTo(countryBoxRow);
-   	$('<p>', {"class": "box-text-2 col-xs-8"}).text(item.region).appendTo(countryBoxRow);
-   	$('<p>', {"class": "box-text-1 col-xs-2"}).text('Timezone:').appendTo(countryBoxRow);
-   	$('<p>', {"class": "box-text-2 col-xs-8"}).text(item.timezones).appendTo(countryBoxRow);
-   	$('<p>', {"class": "box-text-1 col-xs-2"}).text('Currency:').appendTo(countryBoxRow);
-   	$('<p>', {"class": "box-text-2 col-xs-8"}).text(item.currencies).appendTo(countryBoxRow);
-   	$('<p>', {"class": "box-text-1 col-xs-2"}).text('Language:').appendTo(countryBoxRow);
-   	$('<p>', {"class": "box-text-2 col-xs-8"}).text(item.languages).appendTo(countryBoxRow);
+   	createData("Capital:", item.capital);
+   	createData("Region:", item.region);
+   	createData("Timezone::", item.timezones);
+   	createData("Currency:", item.currencies);
+   	createData("Language:", item.languages);
    	
-  	
-   	
+    function createData(info, data) {
+	  	$('<p>', {"class": "box-text-1 col-xs-2"}).text(info).appendTo(countryBoxRow);
+	   	$('<p>', {"class": "box-text-2 col-xs-8"}).text(data).appendTo(countryBoxRow);
+  	}
 });
+
 }
